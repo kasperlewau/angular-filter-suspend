@@ -14,6 +14,13 @@ filter(args, suspend[true|false]);
 ```
 
 ### usage
+
+**Note:** The return value of a filter that was initially suspended would be the first value passed to said filter. This differs to some extent from what the native return values are. Check the [angular docs](https://docs.angularjs.org/api/ng/filter) for a reference point.
+
+If however the filter was *not* suspended initially, but at a later point in time it was - the last state of the un-suspended filter would be the returned value.
+
+---
+
 ```js
   angular.module('yourModule', [ 'angular.filter.suspend' ]);
 ```
